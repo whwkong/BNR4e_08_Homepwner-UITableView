@@ -7,6 +7,15 @@
 //
 
 #import "BNRItemStore.h"
+#import "BNRItem.h"
+
+
+@interface BNRItemStore()
+
+@property(nonatomic, strong) NSMutableArray *privateItems;
+
+@end
+
 
 @implementation BNRItemStore
 
@@ -35,7 +44,32 @@
 {
     self = [super init];
     
+    _privateItems = [[NSMutableArray alloc] init];
+    
+    
+    if (self) {
+        // initialize array with 5 items
+        for (int i=0; i<5; ++i) {
+            [self createItem];
+        }
+    }
+    
     return self;
+}
+
+-(NSArray*) allItems
+{
+    return self.privateItems;
+}
+
+-(BNRItem*) createItem
+{
+    BNRItem *item = [BNRItem randomItem];
+    
+    [self.privateItems addObject:item];
+    
+    
+    return item; 
 }
 
 @end

@@ -23,10 +23,6 @@
     // call the superclass' designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     
-    
-    /*
-    BNRItemStore *store = [[BNRItemStore alloc]init];
-    store = nil;*/
     return self;
 }
 
