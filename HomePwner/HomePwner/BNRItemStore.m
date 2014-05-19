@@ -24,7 +24,7 @@
     static BNRItemStore *sharedStore = nil;
     
     // Do I need to create a sharedStore?
-    if (sharedStore) {
+    if (!sharedStore) {
         sharedStore = [[self alloc] initPrivate];
     }
     
